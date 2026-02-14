@@ -27,6 +27,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.happybirthday.ui.theme.HappyBirthdayTheme
 
+
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,8 +39,8 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
                     GreetingImage(
-                        message = "Happy Birthday Sam!",
-                        from = "From Emma"
+                        message = stringResource(R.string.happy_birthday_text),
+                        from = stringResource(R.string.signature_text)
 
                     )
                 }
@@ -48,7 +49,6 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
-
 
 @Composable
 fun GreetingText(message: String, from: String, modifier: Modifier = Modifier) {

@@ -30,41 +30,32 @@ import com.example.happybirthday.ui.theme.HappyBirthdayTheme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //enableEdgeToEdge()
+
         setContent {
             HappyBirthdayTheme {
-                Surface(modifier = Modifier.fillMaxSize(),
-                color = MaterialTheme.colorScheme.background){
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colorScheme.background
+                ) {
                     GreetingImage(
                         message = "Happy Birthday Sam!",
                         from = "From Emma"
 
                     )
                 }
-//                { innerPadding ->
-//                    Greeting(
-//                        name = "Android",
-//                        modifier = Modifier.padding(innerPadding)
-//                    )
-                }
+
             }
         }
     }
+}
 
-
-//@Composable
-//fun Greeting(name: String, modifier: Modifier = Modifier) {
-//    Text(
-//        text = "Hello $name!",
-//        modifier = modifier
-//    )
-//}
 
 @Composable
-fun GreetingText(message: String, from: String, modifier: Modifier = Modifier)
-{
-    Column( verticalArrangement = Arrangement.Center,
-        modifier = modifier)
+fun GreetingText(message: String, from: String, modifier: Modifier = Modifier) {
+    Column(
+        verticalArrangement = Arrangement.Center,
+        modifier = modifier
+    )
     {
 
         Text(
@@ -78,28 +69,28 @@ fun GreetingText(message: String, from: String, modifier: Modifier = Modifier)
             fontSize = 20.sp,
             modifier = Modifier
                 .padding(16.dp)
-                .align(alignment = Alignment.End) // спросить
+                .align(alignment = Alignment.End)
         )
     }
 }
+
 @Composable
-fun GreetingImage(message: String, from: String, modifier: Modifier = Modifier)
-{
+fun GreetingImage(message: String, from: String, modifier: Modifier = Modifier) {
     val image = painterResource(R.drawable.androidparty)
-    Box(modifier){
-    Image (
-        painter = image,
-        contentDescription = null,
-        contentScale = ContentScale.Crop,
-        alpha = 0.5F
-    )
-    GreetingText(
-        message = message,
-        from = from,
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(8.dp)
-    )
+    Box(modifier) {
+        Image(
+            painter = image,
+            contentDescription = null,
+            contentScale = ContentScale.Crop,
+            alpha = 0.5F
+        )
+        GreetingText(
+            message = message,
+            from = from,
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(8.dp)
+        )
     }
 }
 
@@ -111,6 +102,6 @@ fun BirthdayCardPreview() {
             message = stringResource(R.string.happy_birthday_text),
             from = stringResource(R.string.signature_text),
         )
-//        Greeting("Yliana_Olia")
+
     }
 }
